@@ -20,3 +20,7 @@ TabView.prototype.checkDatas = function(index){
 	}
 	
 }
+
+TabView.prototype.unload = function(){
+	this.$tab.hide()
+}
