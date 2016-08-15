@@ -9,7 +9,7 @@ MoreTabView.prototype.load = function(index){
 	
 	var moreTab = document.querySelector('.more-show')
 	
-	var right = moreTab.getBoundingClientRect().right - $('.more-modal').innerWidth()
+	var right = moreTab.getBoundingClientRect().right - $('.more-modal').innerWidth() + 'px'
 	
 	TabView.prototype.load.call(this,index)
 	
@@ -29,7 +29,17 @@ MoreTabView.prototype.load = function(index){
 		$(this).hide()
 	})
 	
-	
+	$('.more-modal li').hover(function(){
+		$(this).find('p').stop().animate({
+			top:'0'
+		},300)
+	},function(){
+		$(this).find('p').stop().animate({
+			top:'25%'
+		},300)
+		
+		}
+	)
 	
 	
 }
