@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery-3.1.0.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			p {
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>距离毕业还有</h2>
+		<p></p>
+		<button onclick="dianji()">马上毕业</button>
+		<script type="text/javascript">
+			//获取当前时间
+			var int = setInterval(function() {
+				var t1 = new Date()
+					//设置过期时间
+				var t2 = new Date('2016 10 15 00:00:00')
+
+				//总毫秒数
+				var t3 = t2.getTime() - t1.getTime()
+
+				var day = parseInt(t3 / 86400000)
+				var hour = parseInt((t3 - day * 86400000) / 3600000)
+				var min = parseInt((t3 - day * 86400000 - 3600000 * hour) / 60000)
+				var sencond = parseInt((t3 - day * 86400000 - 3600000 * hour - min * 60000) / 1000)
+				day = day > 10 ? day : '0' + day
+				hour = hour > 10 ? hour : '0' + hour
+				min = min > 10 ? min : '0' + min
+				sencond = sencond > 10 ? sencond : '0' + sencond
+				var str = '剩余' + day + '天' + hour + '小时' + min + '分钟' + sencond + '秒'
+
+				document.querySelector('p').innerHTML = str
+			}, 1000)
+
+			function dianji() {
+				window.clearInterval(int)
+				var str = '剩余' + 0 + '天' + 0 + '小时' + 0 + '分钟' + 0 + '秒'
+				document.querySelector('p').innerHTML = str
+			}
+		</script>
+	</body>
+
+</html>

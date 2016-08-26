@@ -158,13 +158,33 @@ body {
     background-position: left center;
     background-repeat: no-repeat;
 }
+.bgImg {
+    height: 500px;
+    position: relative;
+    background-image: url("../img/Olympic_1000.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    img{
+        display: block;
+        width: @baseWidth;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    img:nth-child(1) {
+      
+        border: 10px solid white;  
+    }
+    
+}
+
 .more-modal {
     width: 610px;
     height: 230px;
     background-color: white;
     box-shadow: 0 0 5px gray;
     padding: 20px;
-    display: none;
+   display: none;
     position: absolute;
     z-index: 10;
     ul {
@@ -208,24 +228,4 @@ body {
             }
         }
     }
-}
-
-.bgImg {
-    height: 500px;
-    position: relative;
-    background-image: url("../img/Olympic_1000.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: hidden;
-    img{
-        display: block;
-        width: @baseWidth;
-        margin: 0 auto;
-        margin-top: 30px;
-    }
-    img:nth-child(1) {
-      
-        border: 10px solid white;  
-    }
-    
 }
